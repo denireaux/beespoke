@@ -6,6 +6,7 @@ from.models import Supplier
 from .encoders import SupplierEncoder
 import json
 
+
 @csrf_exempt
 @require_http_methods(["GET", "POST"])
 def list_suppliers(request):
@@ -16,6 +17,7 @@ def list_suppliers(request):
         content = json.loads(request.body)
         suppliers = Supplier.objects.create(**content)
         return JsonResponse(suppliers, encoder=SupplierEncoder, safe=False)
+
 
 @csrf_exempt
 @require_http_methods(["GET", "DELETE"])

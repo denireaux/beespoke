@@ -1,17 +1,10 @@
 from django.contrib import admin
-from .models import Accessory, Supplier, Tie, BowTie
+from .models import Accessory, Tie, BowTie
 
 
 @admin.register(Accessory)
 class AccessoryAdmin(admin.ModelAdmin):
         list_display = [
-        "name"
-    ]
-
-
-@admin.register(Supplier)
-class SupplierAdmin(admin.ModelAdmin):
-    list_display = [
         "name"
     ]
 
