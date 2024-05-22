@@ -26,9 +26,15 @@ class Accessory(models.Model):
     accessory_category = models.IntegerField()
     name = models.CharField(max_length=256)
 
+    def __str__(self):
+        return self.name
+
 
 class Supplier(models.Model):
     name = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.name
 
 
 class Tie(models.Model):
@@ -50,10 +56,13 @@ class Tie(models.Model):
         on_delete=models.CASCADE,
     )
     active = models.BooleanField()
-    track_inventory = models.IntegerField()
+    number_sold = models.IntegerField()
     outlet_tax_main_outlet = models.IntegerField()
     inventory = models.IntegerField()
     is_premium = models.BooleanField()
+
+    def __str__(self):
+        return self.name
 
 
 class BowTie(models.Model):
@@ -75,8 +84,11 @@ class BowTie(models.Model):
         on_delete=models.CASCADE,
     )
     active = models.BooleanField()
-    track_inventory = models.IntegerField()
+    number_sold = models.IntegerField()
     outlet_tax_main_outlet = models.IntegerField()
     inventory = models.IntegerField()
     is_premium = models.BooleanField()
     is_pretied = models.BooleanField()
+
+    def __str__(self):
+        return self.name
