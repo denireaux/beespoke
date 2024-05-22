@@ -24,7 +24,6 @@ from suppliers.models import Supplier
 
 
 class Accessory(models.Model):
-    accessory_category = models.IntegerField()
     name = models.CharField(max_length=256)
 
     def __str__(self):
