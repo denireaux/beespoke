@@ -1,4 +1,5 @@
 from django.db import models
+from suppliers.models import Supplier
 
 # Columns for accessories as per file sent in email
 # id 
@@ -30,13 +31,6 @@ class Accessory(models.Model):
         return self.name
 
 
-class Supplier(models.Model):
-    name = models.CharField(max_length=256)
-
-    def __str__(self):
-        return self.name
-
-
 class Tie(models.Model):
     handle = models.CharField(max_length=256)
     sku = models.IntegerField()
@@ -55,7 +49,7 @@ class Tie(models.Model):
         related_name="ties",
         on_delete=models.CASCADE,
     )
-    active = models.BooleanField()
+    current_inventory = models.IntegerField(default=0)
     number_sold = models.IntegerField()
     outlet_tax_main_outlet = models.IntegerField()
     inventory = models.IntegerField()
@@ -83,7 +77,7 @@ class BowTie(models.Model):
         related_name="bowties",
         on_delete=models.CASCADE,
     )
-    active = models.BooleanField()
+    current_inventory = models.IntegerField(default=0)
     number_sold = models.IntegerField()
     outlet_tax_main_outlet = models.IntegerField()
     inventory = models.IntegerField()
