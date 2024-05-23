@@ -8,3 +8,11 @@ class Supplier(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class TaxZone(models.Model):
+    name = models.CharField(max_length=256)
+    tax_rate = models.DecimalField(max_digits=5, decimal_places=2)
+
+    def __str__(self):
+        return self.name
