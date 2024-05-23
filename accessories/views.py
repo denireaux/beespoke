@@ -32,4 +32,3 @@ def accessory_detail(request, id):
         except Accessory.DoesNotExist:
             return JsonResponse({"error": "Accessory does not exist"}, status=404)
         return JsonResponse({"deleted": count > 0})
-

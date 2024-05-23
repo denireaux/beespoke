@@ -53,6 +53,7 @@ class Tie(models.Model):
     outlet_tax_main_outlet = models.IntegerField()
     inventory = models.IntegerField()
     is_premium = models.BooleanField()
+    picture_url = models.URLField(blank=True)
 
     def __str__(self):
         return self.name
@@ -82,6 +83,7 @@ class BowTie(models.Model):
     inventory = models.IntegerField()
     is_premium = models.BooleanField()
     is_pretied = models.BooleanField()
+    picture_url = models.URLField(blank=True)
 
     def __str__(self):
         return self.name
