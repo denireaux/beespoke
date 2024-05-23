@@ -10,5 +10,6 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 COPY . /usr/src/app/
+COPY fixtures/ /usr/src/app/fixtures/
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py migrate && python manage.py loaddata /usr/src/app/fixtures/initial_supplier_data.json && python manage.py runserver 0.0.0.0:8000"]

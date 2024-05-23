@@ -1,0 +1,7 @@
+[
+    {"model": "suppliers.supplier", "pk": 1, "fields": {"name": "Dion's Neckwear", "contact_number": null, "contact_email": "sales@dionneckwear.com", "wholesale_discount": null}}, 
+    {"model": "suppliers.supplier", "pk": 2, "fields": {"name": "Trinity Custom Clothing", "contact_number": null, "contact_email": null, "wholesale_discount": 30}},
+    {"model": "accessories.accessory", "pk": 1, "fields": {"name": "Tie"}},
+    {"model": "accessories.accessory", "pk": 2, "fields": {"name": "Bow Tie"}},
+    {"model": "accessories.accessory", "pk": 3, "fields": {"name": "Pocket Square"}}
+]
