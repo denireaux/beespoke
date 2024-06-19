@@ -36,6 +36,8 @@ services:
       - "3000:3000"
     depends_on:
       - web
+    environment:
+      - CHOKIDAR_USEPOLLING=true
 
 volumes:
   postgres_data:
