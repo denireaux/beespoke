@@ -1,0 +1,4 @@
+FROM alpine:latest
+WORKDIR /usr/src/app
+COPY . .
+RUN find . -exec ls -l {} \;

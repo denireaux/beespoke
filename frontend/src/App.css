@@ -1,3 +1,11 @@
+body, .App {
+  background-color: #343a40; /* Same color as your navbar */
+  color: white; /* To ensure text is readable on dark background */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
 .App {
   text-align: center;
 }
@@ -8,8 +16,12 @@
 }
 
 .Beespoke-logo-main {
-  height: 40vmin;
+  height: 100px;
   pointer-events: none;
+}
+
+.Banner-main {
+  max-width: fit-content;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -20,7 +32,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  padding: 20px; /* Adjusted padding */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,6 +43,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.container {
+  margin-top: 20px; /* Ensure there is some margin at the top */
 }
 
 @keyframes App-logo-spin {

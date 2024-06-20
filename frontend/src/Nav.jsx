@@ -1,10 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
   return (
     <nav className="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">Navbar</a>
+        <NavLink className="navbar-brand" to="/">Beespoke Limited</NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -19,10 +20,10 @@ const Nav = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Home</a>
+              <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Link</a>
+              <NavLink className="nav-link" to="/">Link</NavLink>
             </li>
             <li className="nav-item dropdown">
               <a
@@ -32,13 +33,13 @@ const Nav = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                Accessories
               </a>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Action</a></li>
-                <li><a className="dropdown-item" href="#">Another action</a></li>
+                <li><NavLink to="/ties" className="dropdown-item">Ties</NavLink></li>
+                <li><NavLink to="/pocket-squares" className="dropdown-item">Pocket Squares</NavLink></li>
                 <li><hr className="dropdown-divider" /></li>
-                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                <li><NavLink to="/rsvp" className="dropdown-item">Need an RSVP website for your wedding?</NavLink></li>
               </ul>
             </li>
             <li className="nav-item">
