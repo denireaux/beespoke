@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav';
 import BeespokeLogo from './BeespokeLogo.JPG';
 import Banner from './Banner.png';
-import Ties from './components/Ties';
+import TiesList from './components/Ties';
 import Home from './components/Home';
 import Accessories from './components/Accessories';
 import './App.css';
@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/accessories" element={<Accessories />} />
-            <Route path="/ties" element={<Ties />} />
+            <Route path="/ties" element={<TiesList />} />
           </Routes>
         </div>
       </div>

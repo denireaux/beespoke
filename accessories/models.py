@@ -40,6 +40,8 @@ class Tie(models.Model):
         related_name="ties",
         on_delete=models.CASCADE,
     )
+    color_id = models.IntegerField(null=True)
+    color_name = models.CharField(max_length=256, null=True)
     supply_price = models.IntegerField()
     retail_price = models.IntegerField()
     brand_name = models.CharField(max_length=256)
@@ -50,15 +52,9 @@ class Tie(models.Model):
     )
     current_inventory = models.IntegerField(default=0)
     number_sold = models.IntegerField()
-    outlet_tax_main_outlet = models.ForeignKey(
-        TaxZone,
-        related_name="ties",
-        on_delete=models.CASCADE,
-    )
     inventory = models.IntegerField()
     is_premium = models.BooleanField()
     picture_url = models.URLField(blank=True)
-    tags = models.JSONField(default=list)
 
     def __str__(self):
         return self.name

@@ -4,5 +4,6 @@
     {"model": "accessories.accessory", "pk": 1, "fields": {"name": "Tie"}},
     {"model": "accessories.accessory", "pk": 2, "fields": {"name": "Bow Tie"}},
     {"model": "accessories.accessory", "pk": 3, "fields": {"name": "Pocket Square"}},
-    {"model": "suppliers.taxzone", "pk": 1, "fields": {"name": "Denver Tax", "tax_rate": "8.81"}}
+    {"model": "suppliers.taxzone", "pk": 1, "fields": {"name": "Denver Tax", "tax_rate": "8.81"}},
+    {"model": "accessories.tie", "pk": 1, "fields": {"handle": "tie001", "sku": 1001, "name": "Silk Ivory Ties", "description": "A classic ivory tie for formal occasions", "product_category": 1, "color_id": 2, "color_name": "Ivory", "supply_price": 15, "retail_price": 80, "brand_name": "Dion's Neckwear", "supplier_name": 1, "current_inventory": 10, "number_sold": 0, "inventory": 250, "is_premium": false, "picture_url": "https://dion1967.com/cdn/shop/files/S50020-400_01_900x.jpg?v=1698171122"}}
 ]

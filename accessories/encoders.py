@@ -25,7 +25,6 @@ class TieEncoder(ModelEncoder):
         "supplier_name",
         "current_inventory",
         "number_sold",
-        "outlet_tax_main_outlet",
         "inventory",
         "is_premium",
     ]

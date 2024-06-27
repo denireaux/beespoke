@@ -12,27 +12,38 @@ function AccessoriesList() {
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
-            console.log(data[0])
             setAccessories(data || []);
             setTies(data.ties || []);
-            setBowties(data.bowties || []);
-            setPocketSquares(data.pocketSquares || []);
         } else {
             console.error('Failed to fetch accessories');
         }
     };
 
+    const fetchTies = async () => {
+        const url = 'http://localhost:8000/api/accessories/ties';
+        const response = await fetch(url);
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+            setTies(data.ties || []);
+        } else {
+            console.error('Failed to fetch ties');
+        }
+    };
+
     useEffect(() => {
         fetchAccessories();
+        fetchTies();
     }, []);
 
     return (
         <div>
             <h1>Accessories List</h1>
+
             <ul>
-                {ties.length > 0 ? (
+                {ties.length > -1 ? (
                     ties.map((tie) => (
-                        <li key={ties.id}>
+                        <li key={tie.id}>
                             <p>{tie.name}</p>
                         </li>
                     ))
@@ -40,6 +51,8 @@ function AccessoriesList() {
                     <li>No ties available</li>
                 )}
             </ul>
+
+            <h1>Accessories List</h1>   
         </div>
     );
 }
