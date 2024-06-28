@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import './TieComponent.css';
 
 function TiesList() {
   const [ties, setTies] = useState([]);
@@ -19,36 +20,29 @@ function TiesList() {
     fetchTies();
   }, []);
 
-  console.log(ties);
-
   return (
     <div>
       <h1>Our Ties</h1>
       <div className="row">
         {ties.map((tie) => (
-          <div className="col-md-4" key={tie.sku}>
-            <div className="card" style={{ width: '18rem' }}>
-              <img className="card-img-top" src={tie.picture_url || 'https://via.placeholder.com/150'}  alt={`${tie.name} image`} />
-              <div className="card-body">
-                <h5 className="card-title">{tie.name}</h5>
+          <figure className="snip1107 blue" key={tie.sku}>
+            <img src={tie.picture_url || 'https://via.placeholder.com/150'} alt={`${tie.name} image`} />
+            <figcaption>
+              <div><span>Buy Now</span></div>
+              <div>
+                <h3>{tie.name}</h3>
                 <p className="card-text">{tie.description}</p>
+                <p>Color: {tie.color_name}</p>
+                <p>Price: ${tie.retail_price}</p>
+                <p>Inventory: {tie.current_inventory}</p>
               </div>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">Color: {tie.color_id}</li>
-                <li className="list-group-item">Price: ${tie.retail_price}</li>
-                <li className="list-group-item">Inventory: {tie.current_inventory}</li>
-              </ul>
-              <div className="card-body">
-                <a href="#" className="card-link">Card link</a>
-                <a href="#" className="card-link">Another link</a>
-              </div>
-            </div>
-          </div>
+              <a href="#"></a>
+            </figcaption>
+          </figure>
         ))}
       </div>
     </div>
   );
-
 }
 
 export default TiesList;

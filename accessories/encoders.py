@@ -19,6 +19,8 @@ class TieEncoder(ModelEncoder):
         "name",
         "description",
         "product_category",
+        "color_id",
+        "color_name",
         "supply_price",
         "retail_price",
         "brand_name",
@@ -27,6 +29,7 @@ class TieEncoder(ModelEncoder):
         "number_sold",
         "inventory",
         "is_premium",
+        "picture_url",
     ]
 
 
