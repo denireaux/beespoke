@@ -22,27 +22,24 @@ function TiesList() {
 
   return (
     <div>
-      <h1>Our Ties</h1>
-      <div className="row">
+      <h1 className='heading'>Our Ties</h1>
+      <div id="container">
         {ties.map((tie) => (
-          <figure className="snip1107 blue" key={tie.sku}>
-            <img src={tie.picture_url || 'https://via.placeholder.com/150'} alt={`${tie.name} image`} />
-            <figcaption>
-              <div><span>Buy Now</span></div>
-              <div>
-                <h3>{tie.name}</h3>
-                <p className="card-text">{tie.description}</p>
-                <p>Color: {tie.color_name}</p>
-                <p>Price: ${tie.retail_price}</p>
-                <p>Inventory: {tie.current_inventory}</p>
-              </div>
-              <a href="#"></a>
-            </figcaption>
-          </figure>
+          <div className="card" key={tie.sku}>
+            <div className="card-image">
+              <img src={tie.picture_url || 'https://via.placeholder.com/150'} alt={`${tie.name} image`} />
+            </div>
+            <div className="card-text">
+              <h2>{tie.name}</h2>
+              <p>{tie.description}</p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
   );
+  
+  
 }
 
 export default TiesList;

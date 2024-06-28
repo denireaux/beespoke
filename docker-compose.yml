@@ -31,7 +31,7 @@ services:
     build:
       context: ./frontend
     volumes:
-      - ./frontend:/usr/src/app:cached
+      - ./frontend:/usr/src/app
     ports:
       - "3000:3000"
     depends_on:
@@ -39,6 +39,7 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
       - REACT_APP_HOST=0.0.0.0
+    command: ["npm", "start"]
 
 volumes:
   postgres_data:
