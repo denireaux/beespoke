@@ -36,9 +36,7 @@ const Nav = () => {
                 Accessories
               </a>
               <ul className="dropdown-menu">
-                <li><NavLink to="/accessories" className="dropdown-item">See all</NavLink></li>
                 <li><NavLink to="/ties" className="dropdown-item">Ties</NavLink></li>
-                <li><NavLink to="/pocket-squares" className="dropdown-item">Pocket Squares</NavLink></li>
                 <li><hr className="dropdown-divider" /></li>
                 <li><NavLink to="/rsvp" className="dropdown-item">Need an RSVP website for your wedding?</NavLink></li>
               </ul>

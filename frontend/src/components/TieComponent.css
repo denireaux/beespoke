@@ -1,159 +1,109 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Raleway:wght@400;500;600;700;800&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Raleway', serif;
-}
-
-h2 {
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 2rem;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Raleway', serif;
-  background-color: #F2EBDD;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-h1 {
-  margin-bottom: 20px;
-  font-size: 2.5rem;
-  text-align: center;
-}
-
-.heading {
-  color: white; /* Set the heading color to white */
-}
-
-#container {
+.card-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 1em;
   justify-content: center;
-  align-items: flex-start;
-  gap: 20px; /* Space between cards */
-  width: 100%;
-  padding: 20px;
 }
 
 .card {
-  margin: 10px;
-  height: 500px;
-  width: 250px;
-  background-color: #fff;
-  border: 5px solid black;
-  box-shadow: 0 0 0 7px #fff, 0 0 8px 5px #000;
+  position: relative;
   display: flex;
   flex-direction: column;
+  background-color: #242824;
+  padding: 10px;
+  border-radius: 6px;
+  gap: 0.5rem;
+  height: max-content;
+}
+
+.card_form {
+  position: relative;
+  width: 15em;
+  height: 15em;
+  border-radius: 4px;
+  background-color: #9147ff;
+  transition: 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.card_form span {
+  font-size: 1.5em;
+  position: absolute;
+  inset: 0;
+  padding: 5px 10px;
+  color: #fff;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover .card_form span,
+.card:hover .card_data span {
+  opacity: 1;
+}
+
+.card_data {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
-.card-image {
-  position: relative;
-  width: 100%;
-  height: 55%;
-  background-color: #FFDD33;
+.card_data span {
+  color: #9147ff;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  transition: 0.2s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.card_data span:hover {
+  text-decoration: underline;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.text_m {
+  font-size: 0.9em;
+}
+
+.text_s {
+  color: #9147ff;
+  font-size: 0.6em;
+}
+
+.cube {
+  width: max-content;
+  height: 10px;
+  transition: all 0.2s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .cube {
+  transform: rotateX(90deg);
+}
+
+.side {
+  width: max-content;
+  height: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: bold;
 }
 
-.card-image > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.top {
+  transform: rotateX(-90deg) translate3d(0, 0, 0em);
 }
 
-.card-text {
-  height: 45%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.card-text h2 {
-  color: #59C887;
-  letter-spacing: -2px;
-  line-height: 1.2;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.card-text p {
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 500;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.card-text > div {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-}
-
-.card-text > div > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card-text > div > div > span {
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: center;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .card {
-    height: 450px;
-    width: 200px;
-  }
-
-  .card-text h2 {
-    font-size: 1.5rem;
-  }
-
-  .card-text p,
-  .card-text > div > div > span {
-    font-size: 0.875rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    height: auto;
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .card-text {
-    height: auto;
-    padding: 20px;
-  }
-
-  .card-text h2 {
-    font-size: 1.25rem;
-  }
-
-  .card-text p,
-  .card-text > div > div > span {
-    font-size: 0.75rem;
-  }
+.front {
+  transform: translate3d(0, 0, 1em);
 }

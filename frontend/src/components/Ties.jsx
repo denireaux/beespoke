@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import './TieComponent.css';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function TiesList() {
   const [ties, setTies] = useState([]);
@@ -21,25 +21,28 @@ function TiesList() {
   }, []);
 
   return (
-    <div>
-      <h1 className='heading'>Our Ties</h1>
-      <div id="container">
+    <div className="container">
+      <div className="row">
         {ties.map((tie) => (
-          <div className="card" key={tie.sku}>
-            <div className="card-image">
-              <img src={tie.picture_url || 'https://via.placeholder.com/150'} alt={`${tie.name} image`} />
-            </div>
-            <div className="card-text">
-              <h2>{tie.name}</h2>
-              <p>{tie.description}</p>
+          <div className="col-md-4 mb-4" key={tie.sku}>
+            <div className="card" style={{ width: '18rem' }}>
+              <img className="card-img-top" src={tie.picture_url || 'https://via.placeholder.com/150'} alt={`${tie.name} image`} />
+              <div className="card-body">
+                <h5 className="card-title">{tie.name}</h5>
+              </div>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item">Price: ${tie.retail_price}</li>
+                <li className="list-group-item">DEVELOPMENT ONLY: {tie.id}</li>
+              </ul>
+              <div className="card-body">
+                <Link to={`/ties/${tie.id}`} className="card-link">View</Link>
+              </div>
             </div>
           </div>
         ))}
       </div>
     </div>
   );
-  
-  
 }
 
 export default TiesList;

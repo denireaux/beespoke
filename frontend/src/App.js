@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav';
 import TiesList from './components/Ties';
+import TieDetail from './components/TiesDetail';
 import Home from './components/Home';
 import Accessories from './components/Accessories';
 import './App.css';
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/accessories" element={<Accessories />} />
             <Route path="/ties" element={<TiesList />} />
+            <Route path="/ties/:id" element={<TieDetail />} />
           </Routes>
         </div>
       </div>

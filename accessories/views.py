@@ -44,3 +44,11 @@ def list_ties(request):
         content = json.loads(request.body)
         ties = Tie.objects.create(**content)
         return JsonResponse(ties, encoder=TieEncoder, safe=False)
+    
+
+@csrf_exempt
+@require_http_methods(["GET"])
+def tie_detail(request, id):
+    if request.method == "GET":
+        tie = Tie.objects.get(id=id)
+        return JsonResponse(tie, encoder=TieEncoder, safe=False)
