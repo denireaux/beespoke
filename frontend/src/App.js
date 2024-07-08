@@ -7,6 +7,8 @@ import RSVP from './components/RSVP';
 import Mead from './components/Mead';
 import TiesList from './components/TieList';
 import TieDetail from './components/TieDetail';
+import Register from './components/Register';
+import Login from './components/Login';
 import './App.css';
 
 const ScrollToHashElement = () => {
@@ -37,6 +39,8 @@ const App = () => {
           <Route path="/mead" element={<Mead />} />
           <Route path="/ties" element={<TiesList />} />
           <Route path="/ties/:id" element={<TieDetail />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </Router>

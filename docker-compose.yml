@@ -2,13 +2,13 @@ version: '3.8'
 
 services:
   db:
-    image: postgres:13
+    image: postgres
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_DB: beespoke
-      POSTGRES_USER: beespokeuser
-      POSTGRES_PASSWORD: beespokepassword
 
   web:
     build: .

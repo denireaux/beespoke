@@ -32,6 +32,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'corsheaders',
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'users.apps.UsersConfig',
     'suppliers.apps.SuppliersConfig',
     'accessories.apps.AccessoriesConfig',
     'django.contrib.admin',
@@ -79,8 +82,12 @@ WSGI_APPLICATION = 'beespoke.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydatabase',
+        'USER': 'myuser',
+        'PASSWORD': 'mypassword',
+        'HOST': 'db',  # The Docker service name for the database
+        'PORT': '5432',
     }
 }
 
@@ -133,3 +140,12 @@ CORS_ALLOWED_ORIGINS = [
 
 # Uncomment the following line if you want to allow all origins (not recommended for production)
 # CORS_ALLOW_ALL_ORIGINS = True
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+AUTH_USER_MODEL = 'users.CustomUser'
