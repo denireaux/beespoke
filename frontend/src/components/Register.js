@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Register.css';
 
 const Register = () => {
@@ -30,6 +30,10 @@ const Register = () => {
     const data = await response.json();
     console.log(data);
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }, []);
 
   return (
     <form className="register-form" onSubmit={handleRegister}>
