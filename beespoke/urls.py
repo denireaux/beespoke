@@ -22,4 +22,5 @@ urlpatterns = [
     path('api/suppliers/', include('suppliers.urls')),
     path('api/accessories/', include('accessories.urls')),
     path('api/users/', include('users.urls')),
+    path('api/mead/', include('mead.urls')),
 ]

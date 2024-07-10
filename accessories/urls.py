@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from .views import list_accessories, accessory_detail, list_ties, tie_detail
 
 urlpatterns = [

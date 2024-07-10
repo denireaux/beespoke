@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
+    'mead.apps.MeadConfig',
     'users.apps.UsersConfig',
     'suppliers.apps.SuppliersConfig',
     'accessories.apps.AccessoriesConfig',
