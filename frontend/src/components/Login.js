@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import './Register.css'; 
+import { useNavigate } from 'react-router-dom';
+import './Register.css';
+import { useAuth } from '../contexts/AuthContext';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -19,9 +23,9 @@ const Login = () => {
     });
     const data = await response.json();
     if (data.access) {
-      localStorage.setItem('user', JSON.stringify(data));
+      login(data);
+      navigate('/');
     }
-    console.log(data);
   };
 
   useEffect(() => {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Mead.css'
 
 const Mead = () => {
 
@@ -21,21 +22,33 @@ const Mead = () => {
         fetchMeadItems();
     }, []);
 
-    console.log(meadItems)
+    useEffect(() => {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }, [meadItems]);
   
     return (
-        <section className="et-slide" id="tab-mead">
-        <h1>Mead</h1>
-        <h3>Information about our mead products.</h3>
-        
-        {meadItems.map(item => (
-            <div key={item.id}>
-                <h2>{item.name}</h2>
-                <p>{item.description}</p>
-            </div>
-        ))}
+        <section className="wrapper">
+          <main className="row title">
+            <ul>
+              <li>Name</li>
+              <li>Price</li>
+              <li>Description</li>
+            </ul>
+          </main>
+          {meadItems.map(item => (
+            <section className="row-fadeIn-wrapper" key={item.id}>
+              <article className="row fadeIn mead">
+                <ul>
+                  <li>{item.name}</li>
+                  <li>${item.retail_price}</li>
+                  <li>{item.description}</li>
+                </ul>
+              </article>
+            </section>
+          ))}
         </section>
-    );
+      );
+      
 }
 
 export default Mead;

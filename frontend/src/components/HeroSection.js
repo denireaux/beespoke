@@ -1,13 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext.js';
 import './HeroSection.css';
 
 const HeroSection = () => {
+  const { isLoggedIn, logout } = useAuth(); 
+
   return (
     <section className="et-hero-tabs">
       <div className="et-hero-top">
-        <NavLink className="et-hero-top-tab" to="/register#tab-register">Sign Up</NavLink>
-        <NavLink className="et-hero-top-tab" to="/login#tab-login">Login</NavLink>
+        {!isLoggedIn ? (
+          <>
+            <NavLink className="et-hero-top-tab" to="/register#tab-register">Sign Up</NavLink>
+            <NavLink className="et-hero-top-tab" to="/login#tab-login">Login</NavLink>
+          </>
+        ) : (
+          <NavLink className="et-hero-top-tab" to="/" onClick={logout}>Logout</NavLink>
+        )}
       </div>
       <h1>BEESPOKE LIMITED.</h1>
       <h3>Mead x Suits</h3>

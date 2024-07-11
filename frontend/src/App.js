@@ -33,6 +33,7 @@ const App = () => {
         <HeroSection />
         <ScrollToHashElement />
         <Routes>
+          <Route path="/" exact component={HeroSection} />
           <Route path="/about" element={<About />} />
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/rsvp" element={<RSVP />} />

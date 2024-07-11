@@ -12,7 +12,6 @@ function TiesList() {
 
         if (response.ok) {
             const data = await response.json();
-            console.log(data);
             setTies(data || []);
         } else {
             console.error('Failed to fetch ties');

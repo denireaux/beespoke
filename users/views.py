@@ -18,3 +18,5 @@ class RegisterView(generics.CreateAPIView):
         response.data['refresh'] = str(refresh)
         response.data['access'] = str(refresh.access_token)
         return response
+
+

@@ -15,7 +15,7 @@
     width: 100%;
     max-width: 16.5em;
     height: 16.5em;
-    box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 120ms;
     display: flex;
@@ -42,25 +42,39 @@
     font-weight: 600;
     text-transform: uppercase;
     opacity: 0;
+    z-index: 1;
 }
 
-.card .title {
+.card .title,
+.card .price {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9em;
     position: absolute;
     left: 0.625em;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.card .title {
     bottom: 1.875em;
     font-weight: 400;
     color: #000;
 }
 
 .card .price {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 0.9em;
-    position: absolute;
-    left: 0.625em;
     bottom: 0.625em;
     color: #000;
+}
+
+.card .title::before,
+.card .title::after,
+.card .price::before,
+.card .price::after {
+    content: none !important;
 }
 
 .card:hover::after {
