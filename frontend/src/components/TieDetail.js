@@ -25,6 +25,10 @@ function TieDetail() {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   }, [tie]);
 
+  const formatPrice = (price) => {
+    return parseFloat(price).toFixed(2);
+  };
+
   if (!tie) {
     return <div>Loading...</div>;
   }
@@ -36,7 +40,7 @@ function TieDetail() {
       <h1>{tie.name}</h1>
       <img src={tie.picture_url || 'https://via.placeholder.com/150'} alt={`${tie.name} image`} />
       <p>{tie.description}</p>
-      <p>Price: ${tie.retail_price}</p>
+      <p>Price: ${formatPrice(tie.retail_price)}</p>
     </div>
   );
 }

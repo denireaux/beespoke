@@ -32,6 +32,10 @@ function TiesList() {
         navigate(`/ties/${tie.id}`);
     };
 
+    const formatPrice = (price) => {
+        return parseFloat(price).toFixed(2);
+    };
+
     return (
         <div className="grid-container">
             {ties.map((tie) => (
@@ -41,7 +45,7 @@ function TiesList() {
                             <img src={tie.picture_url || 'https://via.placeholder.com/150'} alt={`${tie.name} image`} />
                         </div>
                         <span className="title">{tie.name}</span>
-                        <span className="price">${tie.retail_price}</span>
+                        <span className="price">${formatPrice(tie.retail_price)}</span>
                     </div>
                 </div>
             ))}

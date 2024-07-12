@@ -43,7 +43,7 @@ class Tie(models.Model):
     color_id = models.IntegerField(null=True)
     color_name = models.CharField(max_length=256, null=True)
     supply_price = models.IntegerField()
-    retail_price = models.IntegerField()
+    retail_price = models.DecimalField(max_digits=10, decimal_places=2)
     brand_name = models.CharField(max_length=256)
     supplier_name = models.ForeignKey(
         Supplier,
