@@ -12,7 +12,6 @@ function TieDetail() {
       const response = await fetch(`http://localhost:8000/api/accessories/ties/${id}/`);
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
         setTie(data);
       } else {
         console.error('Failed to fetch tie details');

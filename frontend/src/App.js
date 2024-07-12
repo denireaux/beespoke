@@ -35,11 +35,11 @@ const App = () => {
         <Routes>
           <Route path="/" exact component={HeroSection} />
           <Route path="/about" element={<About />} />
-          <Route path="/accessories" element={<Accessories />} />
+          <Route path="/accessories/" element={<Accessories />} />
+          <Route path="/accessories/ties" element={<TiesList />} />
+          <Route path="/accessories/ties/:id" element={<TieDetail />} />
           <Route path="/rsvp" element={<RSVP />} />
           <Route path="/mead" element={<Mead />} />
-          <Route path="/ties" element={<TiesList />} />
-          <Route path="/ties/:id" element={<TieDetail />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Routes>

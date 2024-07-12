@@ -29,7 +29,7 @@ function TiesList() {
     }, [ties]);
 
     const handleCardClick = (tie) => {
-        navigate(`/ties/${tie.id}`);
+        navigate(`/accessories/ties/${tie.id}`);
     };
 
     const formatPrice = (price) => {

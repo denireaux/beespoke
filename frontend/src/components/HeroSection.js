@@ -11,8 +11,8 @@ const HeroSection = () => {
       <div className="et-hero-top">
         {!isLoggedIn ? (
           <>
-            <NavLink className="et-hero-top-tab" to="/register#tab-register">Sign Up</NavLink>
-            <NavLink className="et-hero-top-tab" to="/login#tab-login">Login</NavLink>
+            <NavLink className="et-hero-top-tab" to="/register">Sign Up</NavLink>
+            <NavLink className="et-hero-top-tab" to="/login">Login</NavLink>
           </>
         ) : (
           <NavLink className="et-hero-top-tab" to="/" onClick={logout}>Logout</NavLink>
@@ -21,10 +21,10 @@ const HeroSection = () => {
       <h1>BEESPOKE LIMITED.</h1>
       <h3>Mead x Suits</h3>
       <div className="et-hero-tabs-container">
-        <NavLink className="et-hero-tab" to="/about#tab-about">About</NavLink>
-        <NavLink className="et-hero-tab" to="/accessories#tab-accessories">Accessories</NavLink>
-        <NavLink className="et-hero-tab" to="/rsvp#tab-rsvp">Need an RSVP Website?</NavLink>
-        <NavLink className="et-hero-tab" to="/mead#tab-mead">Mead</NavLink>
+        <NavLink className="et-hero-tab" to="/about">About</NavLink>
+        <NavLink className="et-hero-tab" to="/accessories">Accessories</NavLink>
+        <NavLink className="et-hero-tab" to="/rsvp">Need an RSVP Website?</NavLink>
+        <NavLink className="et-hero-tab" to="/mead">Mead</NavLink>
         <span className="et-hero-tab-slider"></span>
       </div>
     </section>
