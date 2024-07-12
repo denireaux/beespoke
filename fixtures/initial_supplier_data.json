@@ -1,5 +1,19 @@
 [
     {
+        "model": "users.customuser",
+        "pk": 1,
+        "fields": {
+            "username": "admin",
+            "password": "pbkdf2_sha256$720000$vLWzgBjcUWwy4gMx974Ix3$OCZL7VpLMQEnAVWivFzgXDI4lLpuW/RQxPab66yVjAo=",
+            "is_superuser": true,
+            "is_staff": true,
+            "is_active": true,
+            "first_name": "Admin",
+            "last_name": "User",
+            "email": "admin@example.com"
+        }
+    },
+    {
         "model": "suppliers.supplier",
         "pk": 1,
         "fields": {
@@ -497,6 +511,39 @@
             "retail_price": "22.00",
             "picture_url": "https://brewmasterwholesale.com/product_image/morebeer/500x500/26750.png",
             "sku": "20015"
+        }
+    },
+    {
+        "model": "mead.meaditem",
+        "pk": 16,
+        "fields": {
+            "name": "Bucket, 6.5 Gallon",
+            "description": "6.5 gallon bucket with a hole drilled for a spigot. Spigot is not included.",
+            "retail_price": "24.00",
+            "picture_url": "https://brewmasterwholesale.com/product_image/morebeer/500x500/27627.png",
+            "sku": "20016"
+        }
+    },
+    {
+        "model": "mead.meaditem",
+        "pk": 17,
+        "fields": {
+            "name": "Dry Wine Yeast, D47, 5g",
+            "description": "A premium quality yeast known particularly for its tropical and citrus aromas.",
+            "retail_price": "1.50",
+            "picture_url": "https://brewmasterwholesale.com/product_image/morebeer/500x500/26513.png",
+            "sku": "20017"
+        }
+    },
+    {
+        "model": "mead.meaditem",
+        "pk": 17,
+        "fields": {
+            "name": "Dry Wine Yeast, 71B-1122, 5g",
+            "description": "A highly aromatic yeast that produces smooth wines that mature quicker. Alcohol tolerance: 14%.",
+            "retail_price": "1.50",
+            "picture_url": "https://brewmasterwholesale.com/product_image/morebeer/500x500/23199.png",
+            "sku": "20018"
         }
     }
 ]
