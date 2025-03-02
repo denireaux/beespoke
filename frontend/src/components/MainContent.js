@@ -15,7 +15,7 @@ const MainContent = () => {
         <h3>something about websites</h3>
       </section>
       <section className="et-slide" id="tab-angular">
-        <h1>Mead</h1>
+        <h1>Mead Kits</h1>
         <h3>something about mead</h3>
       </section>
     </main>
