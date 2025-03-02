@@ -11,8 +11,8 @@ const HeroSection = () => {
       <div className="et-hero-top">
         {!isLoggedIn ? (
           <>
-            <NavLink className="et-hero-top-tab" to="/register">Sign Up</NavLink>
-            <NavLink className="et-hero-top-tab" to="/login">Login</NavLink>
+            <NavLink className="et-hero-top-tab" to="/">Sign Up</NavLink>
+            <NavLink className="et-hero-top-tab" to="/">Login</NavLink>
           </>
         ) : (
           <NavLink className="et-hero-top-tab" to="/" onClick={logout}>Logout</NavLink>
