@@ -8,8 +8,8 @@ const RSVP = () => {
 
   return (
     <section className="et-slide" id="tab-rsvp">
-      <h1>RSVP</h1>
-      <h3>Information about our RSVP services.</h3>
+      <h1>RSVP (Coming soon)</h1>
+      <h3>We will ultimately offer our clients the service of building out their event's RSVP website.</h3>
     </section>
   );
 }

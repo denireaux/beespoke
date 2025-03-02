@@ -9,7 +9,7 @@ const Accessories = () => {
 
   return (
     <section className="et-slide" id="tab-accessories">
-      <h1>Accessories. (Coming soon.)</h1>
+      <h1>Accessories. (Coming soon)</h1>
       <h3>Here you'll find all of the specially curated accents for your look.</h3>
       <NavLink to="/accessories/ties">Our Ties</NavLink>
     </section>
