@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import HeroSection from './components/HeroSection';
 import About from './components/About';
 import Accessories from './components/Accessories';
@@ -33,9 +33,9 @@ const App = () => {
         <HeroSection />
         <ScrollToHashElement />
         <Routes>
-          <Route path="/" exact component={HeroSection} />
+          <Route path="/" element={<HeroSection />} />
           <Route path="/about" element={<About />} />
-          <Route path="/accessories/" element={<Accessories />} />
+          <Route path="/accessories" element={<Accessories />} />
           <Route path="/accessories/ties" element={<TiesList />} />
           <Route path="/accessories/ties/:id" element={<TieDetail />} />
           <Route path="/rsvp" element={<RSVP />} />
